@@ -1,23 +1,37 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-
+import NavBar from '../components/NavBar/index'
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Amir Blaq</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+      <NavBar styles={styles}/>
+      <div id={styles.heroContainer}>
+        <img src="/hero-yellow.PNG" alt="Vercel Logo" className={styles.heroYellow} />
+        <div>
+          <img src="/blaw.jpg" alt="Vercel Logo" />
+          <img src="/slip.jpg" alt="Vercel Logo" />
+        </div>
+      </div>
+
+      <div id={styles.midMenu}>
+        <div className={styles.box}>
+          MENS
+        </div>
+        <div className={styles.box}>
+          WOMENS
+        </div>
+        <div className={styles.box}>
+          KIDS
+        </div>
+      </div>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>

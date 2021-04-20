@@ -1,6 +1,5 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,12 +7,10 @@
 }
 
 .main {
-  padding: 5rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .footer {
@@ -76,8 +73,6 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
-  margin-top: 3rem;
 }
 
 .card {
@@ -114,9 +109,66 @@
   height: 1em;
 }
 
+#nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  background-color: #000000;
+  margin: 0;
+  color: #eaeaea;
+}
+
+#nav ul {
+  margin: 0;
+}
+#nav li  {
+  list-style-type: none;
+}
+
+.icons {
+  height: .75em;
+}
+
+#heroContainer {
+  display: flex;
+  width: 100vw;
+}
+
+#heroContainer > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#heroContainer > div img {
+  max-width: 50%;
+
+}
+.heroYellow{
+  max-width: 50%;
+}
+
+#midMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#midMenu div {
+  color: #eaeaea;
+  background-color: #000000;
+  padding: 3em;
+  width: 10em;
+  text-align: center;
+  margin: 4em 0;
+}
+/* 
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
   }
-}
+} */
