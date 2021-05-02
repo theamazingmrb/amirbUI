@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Amir Blaq Slides",
+        "description": "Slides example",
+        "image": "/blaw.jpg",
+        "price": 300
+    },
+    {
+        "title": "Amir Blaq Slides V2",
+        "description": "Slides example",
+        "image": "/blue.JPG",
+        "price": 300
+    },
+    {
+        "title": "Amir Blaq Slides v3",
+        "description": "Slides example",
+        "image": "/blaw.jpg",
+        "price": 300
+    }
+]
