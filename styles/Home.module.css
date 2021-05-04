@@ -105,30 +105,7 @@
   line-height: 1.5;
 }
 
-.logo {
-  height: 1em;
-}
 
-#nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0;
-  background-color: #000000;
-  margin: 0;
-  color: #eaeaea;
-}
-
-#nav ul {
-  margin: 0;
-}
-#nav li  {
-  list-style-type: none;
-}
-
-.icons {
-  height: .75em;
-}
 
 #heroContainer {
   display: flex;
@@ -172,3 +149,15 @@
     flex-direction: column;
   }
 } */
+
+.buttons {
+  color: white;
+  font-family: inherit;
+  font-size: .9em;
+  font-weight: 700;
+  background-color: blueviolet;
+  padding: .8em 1.4em;
+  border: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,.4);
+  cursor: pointer;
+}

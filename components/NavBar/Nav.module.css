@@ -1,0 +1,24 @@
+.logo {
+    height: 1em;
+  }
+  
+  #nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    background-color: #000000;
+    margin: 0;
+    color: #eaeaea;
+  }
+  
+  #nav ul {
+    margin: 0;
+  }
+  #nav li  {
+    list-style-type: none;
+  }
+  
+  .icons {
+    height: .75em;
+  }

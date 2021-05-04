@@ -1,17 +1,20 @@
 [
     {
-        "title": "Amir Blaq Slides",
-        "description": "Slides example",
-        "image": "/blaw.jpg",
-        "price": 300
+        "id": "price_1InFSWFGhr0txsqQ8N902Olf",
+        "title": "Blue Girl Slide",
+        "description": "Blue Girl Slides",
+        "image": "/BlueGirlSlide.JPG",
+        "price": 330
     },
     {
+        "id": "price_1ImlGrFGhr0txsqQoQhWdTdh",
         "title": "Amir Blaq Slides V2",
         "description": "Slides example",
         "image": "/blue.JPG",
         "price": 300
     },
     {
+        "id": "price_1ImlGrFGhr0txsqQoQhWdTdh",
         "title": "Amir Blaq Slides v3",
         "description": "Slides example",
         "image": "/blaw.jpg",

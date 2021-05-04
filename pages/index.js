@@ -1,10 +1,15 @@
 import Head from 'next/head'
+import Link from 'next/link';
 import styles from '../styles/Home.module.css'
-import NavBar from '../components/NavBar/index'
 import products from '../products.json'
-import { faProductHunt } from '@fortawesome/free-brands-svg-icons'
+import { FAShoppingCart } from 'react-icons/fa'
+import { useState } from 'react'
+import { useCart } from '../hooks/use-cart.js'
+
 export default function Home() {
-  console.log(products)
+  const {subtotal, totalItems, addToCart, checkout } = useCart()
+
+ 
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +20,6 @@ export default function Home() {
 
       <main className={styles.main}>
 
-      <NavBar styles={styles}/>
       <div id={styles.heroContainer}>
         <img src="/hero-yellow.png" alt="Vercel Logo" className={styles.heroYellow} />
         <div>
@@ -36,32 +40,31 @@ export default function Home() {
         </div>
       </div>
 
-        <div className={styles.grid}>
+        <ul className={styles.grid}>
           { products.map(product => {
           return (
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>{product.title}</h3>
-            <img src={product.image} alt={product.title}/>
-            <p>{product.description}</p>
-            <p>{product.price}</p>
-          </a>
+          <li key={product.id}  className={styles.card}>
+            <Link href={`/products/${product.id}`}>
+              <a>
+                <h3>{product.title}</h3>
+                <img src={product.image} alt={product.title}/>
+                <p>{product.description}</p>
+                <p>${product.price.toFixed(2)}</p>
+                <p>
+                  <button className={styles.buttons} onClick={() => addToCart({ id: product.id})}>Add to Cart</button>
+                </p>
+              </a>
+            </Link>
+          </li>
           )
           })}
         
-        </div>
+        </ul>
 
           
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
       </footer>
     </div>
   )
