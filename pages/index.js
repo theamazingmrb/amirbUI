@@ -9,7 +9,6 @@ import { useCart } from '../hooks/use-cart.js'
 export default function Home() {
   const {subtotal, totalItems, addToCart, checkout } = useCart()
 
- 
   return (
     <div className={styles.container}>
       <Head>
@@ -51,7 +50,13 @@ export default function Home() {
                 <p>{product.description}</p>
                 <p>${product.price.toFixed(2)}</p>
                 <p>
-                  <button className={styles.buttons} onClick={() => addToCart({ id: product.id})}>Add to Cart</button>
+                  <button className={styles.buttons} onClick={(event) => {
+                    event.stopPropagation()
+                    event.nativeEvent.stopImmediatePropagation();
+
+                    addToCart({ id: product.id})
+
+                  }}>Add to Cart</button>
                 </p>
               </a>
             </Link>

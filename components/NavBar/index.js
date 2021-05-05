@@ -13,8 +13,6 @@ export default function NavBar(){
           <li><a href="/">MENS</a></li>
           <li><a href="/">WOMENS</a></li>
           <li><a href="/">KIDS</a></li>
-          <li><a href="/"><FontAwesomeIcon className={styles.icons} icon={faUser}>Icon</FontAwesomeIcon></a></li>
-          <li><a href="/"><FontAwesomeIcon className={styles.icons} icon={faSearch}>Icon</FontAwesomeIcon></a></li>
           <li><a href="/cart"><FontAwesomeIcon className={styles.icons} icon={faShoppingBag}>Icon</FontAwesomeIcon>${subtotal.toFixed(2)}</a></li>
       
         </ul>

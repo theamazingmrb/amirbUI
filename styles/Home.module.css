@@ -82,8 +82,8 @@
   flex-basis: 45%;
   max-width: 20rem;
   padding: 1.5rem;
-  text-align: left;
-  color: inherit;
+  text-align: center;
+  color: white;
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
@@ -145,13 +145,20 @@
   text-align: center;
   margin: 10em 0;
 }
-/* 
+
+
 @media (max-width: 600px) {
-  .grid {
-    width: 100%;
+  #heroContainer {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
-} */
+
+  #midMenu div {
+    display: none;
+  }
+} 
 
 .buttons {
   color: white;
@@ -163,6 +170,7 @@
   border: 0;
   box-shadow: 0 2px 6px rgba(0,0,0,.4);
   cursor: pointer;
+  z-index: 2;
 }
 
 .card img {

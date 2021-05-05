@@ -10,6 +10,7 @@
     background-color: #000000;
     margin: 0;
     color: #eaeaea;
+    
   }
   
   #nav ul {
@@ -21,4 +22,10 @@
   
   .icons {
     height: .75em;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
