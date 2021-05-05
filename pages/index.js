@@ -23,7 +23,7 @@ export default function Home() {
         <img src="/BlackCrown.JPG" alt="Black Crown Slides" className={styles.heroYellow} />
         <div>
           <img src="/BlackClassics.JPG" alt="Black Classic Slide" />
-          <img src="/SlideSide.JPG" alt="Black Classic Side view" />
+          <img src="/SlideSide.jpg" alt="Black Classic Side view" />
         </div>
       </div>
 
