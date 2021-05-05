@@ -14,38 +14,17 @@
         "price": 330
     },
     {
-        "id": "price_1InFSWFGhr0txsqQ8N902Olf",
-        "title": "Blue Girl Slide",
-        "description": "Blue Girl Slides",
-        "image": "/BlueGirlSlide.JPG",
-        "price": 330
-    },
-    {
         "id": "price_1InG8QFGhr0txsqQI34jYr5b",
-        "title": "Blue Girl Slide Alt",
+        "title": "Blue Girl Slide",
         "description": "Classic White Slides with Blue Logo",
         "image": "/BlueGirlSlideAlt.JPG",
         "price": 330
     },
     {
-        "id": "price_1InG7IFGhr0txsqQhmVYsKQz",
+        "id": "price_1InG5wFGhr0txsqQyyd4RB5B",
         "title": "Green Girl Slide",
         "description": "Green Girl Slides",
-        "image": "/GreenGirlSlide.JPG",
-        "price": 330
-    },
-    {
-        "id": "price_1InG5wFGhr0txsqQyyd4RB5B",
-        "title": "Green Girl Slide Alt",
-        "description": "Green Girl Slides",
         "image": "/GreenGirlSlidesAlt.JPG",
-        "price": 330
-    },
-    {
-        "id": "price_1InG4pFGhr0txsqQ4bRM4wJL",
-        "title": "Pink Girl Slide",
-        "description": "Pink Girl Slides",
-        "image": "/PinkGirlSlides.JPG",
         "price": 330
     },
     {

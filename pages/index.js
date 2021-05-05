@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link';
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import products from '../products.json'
 import { FAShoppingCart } from 'react-icons/fa'
@@ -20,9 +21,9 @@ export default function Home() {
       <main className={styles.main}>
 
       <div id={styles.heroContainer}>
-        <img src="/BlackCrown.JPG" alt="Black Crown Slides" className={styles.heroYellow} />
+        <img src="/BlackClassics.JPG" alt="Black Crown Slides" className={styles.heroYellow} />
         <div>
-          <img src="/BlackClassics.JPG" alt="Black Classic Slide" />
+          <img src="/BlackCrown.JPG" alt="Black Classic Slide" />
           <img src="/SlideSide.jpg" alt="Black Classic Side view" />
         </div>
       </div>
