@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar/index'
 
 function MyApp({ Component, pageProps }) {
   const cart = useCartState();
-  return <CartContext.Provider value={cart}>
+  return <CartContext.Provider value={cart} >
         <NavBar />
         <Component {...pageProps} />  
       </CartContext.Provider>

@@ -21,10 +21,10 @@ export default function Home() {
       <main className={styles.main}>
 
       <div id={styles.heroContainer}>
-        <img src="/hero-yellow.png" alt="Vercel Logo" className={styles.heroYellow} />
+        <img src="/BlackCrown.JPG" alt="Black Crown Slides" className={styles.heroYellow} />
         <div>
-          <img src="/blaw.jpg" alt="Vercel Logo" />
-          <img src="/slip.jpg" alt="Vercel Logo" />
+          <img src="/BlackClassics.JPG" alt="Black Classic Slide" />
+          <img src="/SlideSide.JPG" alt="Black Classic Side view" />
         </div>
       </div>
 
