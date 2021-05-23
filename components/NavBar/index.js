@@ -10,9 +10,9 @@ export default function NavBar(){
         <ul  id={styles.nav}>
           <li><a href="/"><img src="/logo.PNG" alt="Vercel Logo"  className={styles.logo}/>
         </a></li>
-          <li><a href="/">MENS</a></li>
-          <li><a href="/">WOMENS</a></li>
-          <li><a href="/">KIDS</a></li>
+          <li><a href="#midMenu">ADULTS</a></li>
+          <li><a href="#midMenu">KIDS</a></li>
+          <li><a href="#midMenu">ALL</a></li>
           <li><a href="/cart"><FontAwesomeIcon className={styles.icons} icon={faShoppingBag}>Icon</FontAwesomeIcon>${subtotal.toFixed(2)}</a></li>
       
         </ul>
