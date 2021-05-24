@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import products from '../products.json'
-import { FAShoppingCart } from 'react-icons/fa'
 import { useState } from 'react'
 import { useCart } from '../hooks/use-cart.js'
 
@@ -69,7 +68,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Amir Blaq</title>
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" href="/" />
       </Head>
       
 

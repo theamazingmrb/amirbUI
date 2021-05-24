@@ -1,0 +1,33 @@
+.logo {
+    max-height: 1em;
+    position: relative;
+    top: 2px;
+  }
+  
+  #nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    background-color: #000000;
+    margin: 0 10vw;
+    color: #eaeaea;
+    border-bottom: 1px solid white;
+  }
+  
+  #nav ul {
+    margin: 0;
+  }
+  #nav li  {
+    list-style-type: none;
+  }
+  
+  .icons {
+    height: .75em;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }

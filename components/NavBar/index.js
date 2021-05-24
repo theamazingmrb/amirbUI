@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faSearch, faShoppingBag} from '@fortawesome/free-solid-svg-icons'
+import { faUser, faSearch, faShoppingBag } from '@fortawesome/free-solid-svg-icons'
+import { FaFacebookSquare } from "@react-icons/all-files/fa/FaFacebookSquare";
+
 import styles from './Nav.module.css';
 import {useCart} from '../../hooks/use-cart.js'
 export default function NavBar(){
@@ -14,7 +16,7 @@ export default function NavBar(){
           <li><a href="#midMenu">KIDS</a></li>
           <li><a href="#midMenu">ALL</a></li>
           <li><a href="/cart"><FontAwesomeIcon className={styles.icons} icon={faShoppingBag}>Icon</FontAwesomeIcon>${subtotal.toFixed(2)}</a></li>
-      
+
         </ul>
       </nav>
     )
