@@ -30,7 +30,7 @@ export default function Home() {
 
   const { cartItems, checkout, updateItem } = useCart();
 
-  const data = cartItems.map(({ id, quantity, pricePerItem }) => {
+  const data = cartItems.filter(item => item.quantity != 0).map(({ id, quantity, pricePerItem }) => {
     const product = products.find(({ id: pid }) => pid === id);
     const { title } = product || {};
 
@@ -69,7 +69,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Shopping Cart - Space Jelly</title>
+        <title>Shopping Cart - Amir Blaq</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
