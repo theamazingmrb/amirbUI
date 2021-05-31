@@ -9,6 +9,7 @@ export default function Footer(){
             <ul  id={styles.nav}>
             <li><a href="/"><img src="/logo.PNG" alt="Vercel Logo"  className={styles.logo}/>
             </a> <FaRegCopyright /> 2021 </li>
+            
             <li><a href="facebook.com"><FaFacebookSquare /></a></li>
             <li><a href="facebook.com"><FaInstagramSquare /></a></li>
             <li><a href="facebook.com"><FaTwitterSquare /></a></li>

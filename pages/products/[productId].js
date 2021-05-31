@@ -1,11 +1,13 @@
 import Head from 'next/head'
 import styles from '../../styles/Product.module.css'
+import { useRouter } from 'next/router'
 
 import { useCart } from '../../hooks/use-cart.js';
 
 import products from '../../products.json';
 
 export default function Product({ product }) {
+  const router = useRouter()
 
   const { id, title, image, price, description } = product;
   const { addToCart } = useCart();
@@ -36,7 +38,11 @@ export default function Product({ product }) {
           </p>
 
           <p>
-            <button className={styles.button} onClick={() => addToCart({ id })}>
+            <button className={styles.button} onClick={() => {
+                addToCart({ id })
+                router.push('/cart') 
+              }
+            }>
               Buy
             </button>
           </p>

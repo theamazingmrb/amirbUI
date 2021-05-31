@@ -2,6 +2,8 @@
     max-height: 1em;
     position: relative;
     top: 2px;
+    image-rendering: -webkit-optimize-contrast;
+
   }
   
   #nav {
