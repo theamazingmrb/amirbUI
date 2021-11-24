@@ -1,15 +1,12 @@
 import Head from 'next/head'
 import styles from '../../styles/Product.module.css'
 import { useRouter } from 'next/router'
-
 import { useCart } from '../../hooks/use-cart.js';
-
-import products from '../../products.json';
 
 export default function Product({ product }) {
   const router = useRouter()
 
-  const { id, title, image, price, description } = product;
+  const { product_id, title, image, price, description } = product;
   const { addToCart } = useCart();
 
   return (
@@ -34,12 +31,12 @@ export default function Product({ product }) {
           </p>
 
           <p className={styles.description}>
-            ${ price.toFixed(2) }
+            ${ parseInt(price).toFixed(2) }
           </p>
 
           <p>
             <button className={styles.button} onClick={() => {
-                addToCart({ id })
+                addToCart({ product_id })
                 router.push('/cart') 
               }
             }>
@@ -54,7 +51,11 @@ export default function Product({ product }) {
 }
 
 export async function getStaticProps({ params = {} }) {
-  const product = products.find(({ id }) => `${id}` === `${params.productId}`);
+  const res = await fetch('https://admirbadmin.herokuapp.com/products/')
+  const data = await res.json()
+
+  const product = data.find(({ product_id }) => `${product_id}` === `${params.productId}`);
+  
   return {
     props: {
       product
@@ -63,11 +64,13 @@ export async function getStaticProps({ params = {} }) {
 }
 
 export async function getStaticPaths() {
-  const paths = products.map((product) => {
-    const { id } = product;
+  const res = await fetch('https://admirbadmin.herokuapp.com/products/')
+  const data = await res.json()
+  const paths = data.map((product) => {
+    const { product_id } = product;
     return {
       params: {
-        productId: id,
+         productId:product_id,
       },
     };
   });

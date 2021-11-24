@@ -1,11 +1,7 @@
 import Head from 'next/head'
 import { FaShoppingCart } from 'react-icons/fa';
 import styles from '../styles/Cart.module.css'
-
 import { useCart } from '../hooks/use-cart.js';
-
-import products from '../products.json';
-
 import Table from '../components/Table';
 
 const columns = [
@@ -28,10 +24,10 @@ const columns = [
 ];
 export default function Home() {
 
-  const { cartItems, checkout, updateItem } = useCart();
+  const { products, cartItems, checkout, updateItem } = useCart();
 
-  const data = cartItems.filter(item => item.quantity != 0).map(({ id, quantity, pricePerItem }) => {
-    const product = products.find(({ id: pid }) => pid === id);
+  const data = cartItems.filter(item => item.quantity != 0).map(({ product_id, quantity, pricePerItem }) => {
+    const product = products.find(({ product_id: pid }) => pid === product_id);
     const { title } = product || {};
 
     const Quantity = () => {
@@ -44,7 +40,7 @@ export default function Home() {
         const quantity = inputs.find(input => input.name === 'quantity')?.value;
 
         updateItem({
-          id,
+          product_id,
           quantity: quantity && parseInt(quantity)
         });
       }
@@ -58,7 +54,7 @@ export default function Home() {
     }
 
     return {
-      id,
+      product_id,
       title,
       quantity: <Quantity />,
       pricePerItem: pricePerItem.toFixed(2),

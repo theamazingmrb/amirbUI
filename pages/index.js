@@ -1,25 +1,23 @@
 import Head from 'next/head'
 import Link from 'next/link';
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import products from '../products.json'
 import { useState } from 'react'
 import { useCart } from '../hooks/use-cart.js'
 
 export default function Home() {
-  const {subtotal, totalItems, addToCart, checkout } = useCart()
+  const { products } = useCart()
   const [filter, setFilter] = useState("All")
-  
+
   const filteredProducts = () => {
     if(filter != "All"){
       return products.filter(product => product.category == filter).map(product => {
         return (
         <li key={product.id}  className={styles.card}>
-          <Link href={`/products/${product.id}`}>
+          <Link href={`/products/${product.product_id}`}>
             <a>
               <h3>{product.title}</h3>
               <img src={product.image} alt={product.title}/>
-               <p>${product.price.toFixed(2)}</p>
+               <p>${parseInt(product.price).toFixed(2)}</p>
               <p>
                 <button className={styles.buttons} onClick={(event) => {
                   event.stopPropagation()
@@ -38,18 +36,15 @@ export default function Home() {
       return products.map(product => {
         return (
         <li key={product.id}  className={styles.card}>
-          <Link href={`/products/${product.id}`}>
+          <Link href={`/products/${product.product_id}`}>
             <a>
               <h3>{product.title}</h3>
               <img src={product.image} alt={product.title}/>
-               <p>${product.price.toFixed(2)}</p>
+               <p>${parseInt(product.price).toFixed(2)}</p>
               <p>
                 <button className={styles.buttons} onClick={(event) => {
                   event.stopPropagation()
                   event.nativeEvent.stopImmediatePropagation();
-  
-                  // addToCart({ id: product.id})
-  
                 }}>Details</button>
               </p>
             </a>
@@ -86,10 +81,10 @@ export default function Home() {
         <div onClick={() => filterSet("All")} className={styles.box}>
           ALL
         </div>
-        <div onClick={() => filterSet("Adults")} className={styles.box}>
+        <div onClick={() => filterSet("AD")} className={styles.box}>
           ADULTS
         </div>
-        <div onClick={() => filterSet("Kids")} className={styles.box}>
+        <div onClick={() => filterSet("KD")} className={styles.box}>
           KIDS
         </div>
       </div>
