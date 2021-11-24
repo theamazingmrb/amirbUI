@@ -7,18 +7,9 @@ export default function Footer(){
     return (
         <nav>
             <ul  id={styles.nav}>
-            <li><a href="/"><img src="/logo.PNG" alt="Vercel Logo"  className={styles.logo}/>
-            </a> <FaRegCopyright /> 2021 </li>
-            
-            <li><a href="facebook.com"><FaFacebookSquare /></a></li>
-            <li><a href="facebook.com"><FaInstagramSquare /></a></li>
-            <li><a href="facebook.com"><FaTwitterSquare /></a></li>
-
-
-                    {/* <li><a href="facebook.com">Amir Blaq<FaRegCopyright /> 2021</a></li>
-                    <li><a href="facebook.com"><FaFacebookSquare /></a></li>
-                    <li><a href="facebook.com"><FaInstagramSquare /></a></li>
-                    <li><a href="facebook.com"><FaTwitterSquare /></a></li> */}
+            <li><a href="/" className={styles.logo}> &copy; 2021 AMIR BLAQ</a></li>
+            <li><a href="https://www.facebook.com/Amir-Blaq-109550781374780/"><FaFacebookSquare /></a></li>
+            <li><a href="https://www.instagram.com/amirblaq/"><FaInstagramSquare /></a></li>
             </ul>
         </nav>
     )
