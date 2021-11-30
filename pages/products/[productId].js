@@ -7,7 +7,7 @@ export default function Product({ product }) {
   const router = useRouter()
 
   const { product_id, title, image, price, description } = product;
-  const { addToCart } = useCart();
+  const { addToCart, products } = useCart();
 
   return (
     <div className={styles.container}>
@@ -18,7 +18,7 @@ export default function Product({ product }) {
 
       <main className={styles.main}>
         <div className={styles.productImage}>
-          <img src={image} alt={title} />
+          <img src={ products.find(p=> p.product_id == product_id)?.image} alt={title} />
         </div>
 
         <div>
