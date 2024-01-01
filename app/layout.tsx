@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { inter } from './ui/fonts'
+import Navbar from './ui/landing/Navbar'
+import Footer from './ui/landing/Footer'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,7 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased flex flex-col justify-between h-screen`}>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
