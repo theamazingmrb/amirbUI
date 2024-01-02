@@ -6,10 +6,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSearch, faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Nav.module.css';
+import useTailwindBreakpoint from '@/app/lib/hooks/useTailwindBreakpoint';
 
 export default function NavBar() {
   // State to handle the visibility of the menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  useTailwindBreakpoint();
 
   // Function to toggle the menu's visibility
   const toggleMenu = () => {
