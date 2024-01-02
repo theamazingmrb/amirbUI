@@ -2,6 +2,7 @@
     font-family: 'Times New Roman', Times, serif;
     color: #ffffff;
     letter-spacing: .75vw;
+    font-size: 1.5em;
     /* word-wrap: normal; */
 }
 
@@ -11,15 +12,17 @@
     justify-content: space-between;
     align-items: center;
     padding: 0;
-    background-color: #000000;
     margin: 0 7vw;
     color: #eaeaea;
+    /* height: 10vh; */
 }
 
 #list {
-    border-bottom: 1px solid white;
+    /* border-bottom: 1px solid white; */
+    height: 10vh;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 50%;
     flex-grow: .75;
 }
@@ -37,7 +40,13 @@
 }
 
 .icons {
-    height: .75em;
+    height: 1em;
+    margin: 0 .5em;
+    padding: .5em;
+    border: 1px solid gray;
+    box-sizing: content-box;
+    border-radius: 5px;
+    background-color: #505050;
 }
 
 .sticky {

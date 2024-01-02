@@ -17,7 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased flex flex-col justify-between h-screen`}>
-        <Navbar />
+        <div>
+          <Navbar />
+          <hr className="border-t-[0.5px] border-gray-600 my-4" />
+        </div>
         {children}
         <Footer />
       </body>

@@ -25,3 +25,8 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.timeNewRoman {
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: .75vw;
+}
