@@ -1,0 +1,56 @@
+.logo {
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+    letter-spacing: .75vw;
+    font-size: 1.5em;
+    /* word-wrap: normal; */
+}
+
+#nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0 7vw;
+    color: #eaeaea;
+    /* height: 10vh; */
+}
+
+#list {
+    /* border-bottom: 1px solid white; */
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    flex-grow: .75;
+}
+
+#list a:hover {
+    border-bottom: 1px solid red;
+}
+
+#nav ul {
+    margin: 0;
+}
+
+#nav li {
+    list-style-type: none;
+}
+
+.icons {
+    height: 1em;
+    margin: 0 .5em;
+    padding: .5em;
+    border: 1px solid gray;
+    box-sizing: content-box;
+    border-radius: 5px;
+    background-color: #505050;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
