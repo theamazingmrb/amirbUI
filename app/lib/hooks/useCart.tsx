@@ -1,7 +1,7 @@
-import { useState, createContext, useContext, useEffect, Dispatch, SetStateAction } from 'react'
+import { useState, createContext, useContext, useEffect, Dispatch, SetStateAction, useRef } from 'react'
 import { ProductProps } from '../definitions';
-import { log } from 'console';
-// import { initiateCheckOut } from '../lib/payments'
+import CheckoutNotification from '@/app/ui/CheckoutNotification';
+
 const CART_STATE_KEY = 'amirb_cart';
 
 type CartProduct = {
@@ -19,6 +19,7 @@ type CartItem = {
     pricePerItem: number;
     total: string;
 };
+
 const products = [
     { id: 'AB001', price: 100, rating: '⭐️⭐️⭐️⭐️⭐️', name: 'The Classic', imageSrc: '/BlackClassics.JPG' },
     { id: 'AB002', price: 100, rating: '⭐️⭐️⭐️⭐️⭐️', name: 'The Crown', imageSrc: '/BlackCrown.JPG' },
@@ -26,6 +27,21 @@ const products = [
     { id: 'AB004', price: 100, rating: '⭐️⭐️⭐️⭐️⭐️', name: 'Green Girl Slides', imageSrc: '/GreenGirlSlide.JPG' },
     { id: 'AB005', price: 100, rating: '⭐️⭐️⭐️⭐️⭐️', name: 'Pink Girl Slides', imageSrc: '/PinkGirlSlide.JPG' },
 ]
+
+type UseCartReturnType = {
+    cart: CartState;
+    products: ProductProps[];
+    cartItems: CartItem[];
+    updateCart: Dispatch<SetStateAction<CartState>>;
+    totalItems: number;
+    totalPrice: number;
+    addToCart: ({ product_id }: { product_id: string }) => void;
+    subtotal: number;
+    checkout: () => void;
+    updateItem: ({ product_id, quantity }: { product_id: string, quantity: number }) => void;
+    showCheckoutNotification: boolean;
+    setShowCheckoutNotification: Dispatch<SetStateAction<boolean>>;
+};
 
 const defaultCartState: CartState = {
     products: {}
@@ -43,21 +59,41 @@ const defaultContext: UseCartReturnType = {
     cart: defaultCartState,
     updateCart: () => {},
     totalItems: 0,
+    totalPrice: 0,
     addToCart: () => {},
     subtotal: 0,
     checkout: () => {},
-    updateItem: () => {}
+    updateItem: () => {},
+    showCheckoutNotification: false,
+    setShowCheckoutNotification: () => {}
 };
-
 
 export const CartContext = createContext(defaultContext);
 
 export function useCartState() {
-    const [cart, updateCart] = useState<CartState>({ products: {} })
+    // Initialize cart state from localStorage if available
+    const [cart, updateCart] = useState<CartState>(() => {
+        // Only run this code on the client side
+        if (typeof window !== 'undefined') {
+            const savedCart = window.localStorage.getItem(CART_STATE_KEY);
+            if (savedCart) {
+                try {
+                    return JSON.parse(savedCart);
+                } catch (error) {
+                    console.error('Failed to parse cart from localStorage:', error);
+                }
+            }
+        }
+        return { products: {} };
+    });
+    
+    // State for checkout notification
+    const [showCheckoutNotification, setShowCheckoutNotification] = useState(false);
 
+    // Save to localStorage whenever cart changes
     useEffect(() => {
         const data = JSON.stringify(cart);
-        window.localStorage.setItem(CART_STATE_KEY, data)
+        window.localStorage.setItem(CART_STATE_KEY, data);
     }, [cart])
 
     const cartItems: CartItem[] = Object.keys(cart.products).map(key => {
@@ -76,7 +112,6 @@ export function useCartState() {
         };
     }).filter((item): item is CartItem => item !== null);
 
-
     const subtotal = cartItems.reduce((accumulator, { pricePerItem, quantity }) => {
         return accumulator + (pricePerItem * quantity)
     }, 0)
@@ -86,33 +121,47 @@ export function useCartState() {
     }, 0)
 
     function checkout() {
-        // initiateCheckOut({
-        //     lineItems: cartItems.map(item => {
-        //         return {
-        //             price: item.id,
-        //             quantity: item.quantity
-        //         }
-        //     })
-        // })
+        // Show the checkout notification instead of processing the order
+        setShowCheckoutNotification(true);
+        
+        // Don't clear the cart until they acknowledge the notification
+        // updateCart({ products: {} });
     }
 
+    // Track if we're currently processing an add to cart operation
+    const isAddingRef = useRef<Record<string, boolean>>({});
+    
     function addToCart({ product_id }: { product_id: string }) {
-        console.log("🚀 ~ Adding to Cart")
+        // Prevent double adds by checking if we're already processing this product
+        if (isAddingRef.current[product_id]) {
+            return;
+        }
+        
+        // Mark this product as being processed
+        isAddingRef.current[product_id] = true;
+        
+        // Use a function to update the cart state to ensure we're working with the latest state
         updateCart(prev => {
-            let cartState = { ...prev }
-
+            // Create a deep copy of the previous state
+            const cartState = JSON.parse(JSON.stringify(prev));
+            
             if (cartState.products[product_id]) {
-                cartState.products[product_id].quantity += 1
+                // If product exists, increment quantity by 1 (not 2)
+                cartState.products[product_id].quantity += 1;
             } else {
+                // If product doesn't exist, add it with quantity 1
                 cartState.products[product_id] = {
                     product_id,
                     quantity: 1
-                }
+                };
             }
-            return cartState
-
-        })
-
+            return cartState;
+        });
+        
+        // Reset the flag after a short delay
+        setTimeout(() => {
+            isAddingRef.current[product_id] = false;
+        }, 500);
     }
 
     function updateItem({ product_id, quantity }: { product_id: string, quantity: number }) {
@@ -138,25 +187,15 @@ export function useCartState() {
         cartItems,
         updateCart,
         totalItems,
+        totalPrice: subtotal,
         addToCart,
         subtotal,
         checkout,
-        updateItem
+        updateItem,
+        showCheckoutNotification,
+        setShowCheckoutNotification
     }
 }
-
-type UseCartReturnType = {
-    cartItems: CartItem[];
-    products: ProductProps[];
-    cart: CartState;
-    updateCart: Dispatch<SetStateAction<CartState>>;
-    totalItems: number;
-    addToCart: ({ product_id }: { product_id: string }) => void;
-    subtotal: number;
-    checkout: () => void;
-    updateItem: ({ product_id, quantity }: { product_id: string, quantity: number }) => void;
-};
-
 
 export function useCart(): UseCartReturnType {
     const cart = useContext(CartContext)
@@ -166,9 +205,12 @@ export function useCart(): UseCartReturnType {
         cart: cart.cart,
         updateCart: cart.updateCart,
         totalItems: cart.totalItems,
+        totalPrice: cart.totalPrice,
         addToCart: cart.addToCart,
         subtotal: cart.subtotal,
         checkout: cart.checkout,
-        updateItem: cart.updateItem
+        updateItem: cart.updateItem,
+        showCheckoutNotification: cart.showCheckoutNotification,
+        setShowCheckoutNotification: cart.setShowCheckoutNotification
     }
 }

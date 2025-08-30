@@ -1,30 +1,24 @@
-'use client'
 import './globals.css'
-import { inter } from './ui/fonts'
-import Navbar from './ui/landing/Navbar'
-import Footer from './ui/landing/Footer'
-import { CartContext, useCartState } from './lib/hooks/useCart'
+import './ui/globals.css'
+import { inter, playfair, montserrat, roboto_mono } from './ui/fonts'
+import ClientLayout from './ClientLayout'
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const cart = useCartState();
-
   return (
-
-    <CartContext.Provider value={cart} >
-      <html lang="en">
-        <body className={`${inter.className} antialiased flex flex-col justify-between h-screen`}>
-          <div>
-            <Navbar />
-            <hr className="border-t-[0.5px] border-gray-600 my-4" />
-          </div>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} ${montserrat.variable} ${roboto_mono.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <title>AMIR BLAQ</title>
+      </head>
+      <body className="antialiased flex flex-col justify-between min-h-screen">
+        <ClientLayout>
           {children}
-          <Footer />
-        </body>
-      </html>
-    </CartContext.Provider>
+        </ClientLayout>
+      </body>
+    </html>
   )
 }

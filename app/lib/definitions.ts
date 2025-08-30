@@ -3,7 +3,6 @@ export type ProductProps = {
   name: string;
   imageSrc: string;
   price: number;
-  rating: string;
 };
 
 export type CartItem = {

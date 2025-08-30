@@ -3,30 +3,91 @@
 @tailwind utilities;
 
 :root {
+  /* Base colors */
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-rgb: 255, 255, 255;
+  
+  /* Brand colors */
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
+  --color-accent: #d4af37;
+  
+  /* Text colors */
+  --color-text-primary: #333333;
+  --color-text-secondary: #666666;
+  --color-text-tertiary: #999999;
+  
+  /* Background colors */
+  --color-background: #ffffff;
+  --color-background-alt: #f9f9f9;
+  
+  /* Border colors */
+  --color-border: #e5e5e5;
+  
+  /* Status colors */
+  --color-error: #e53935;
+  --color-success: #43a047;
+  --color-warning: #f9a825;
+  --color-info: #1e88e5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* Base styles */
+body {
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  min-height: 100vh;
+}
+
+/* Brand specific styles */
+.brand-font {
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 0.75vw;
+}
+
+/* Legacy class for backward compatibility */
+.timeNewRoman {
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 0.75vw;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* Custom container that works with Tailwind */
+.container-custom {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-.timeNewRoman {
-  font-family: 'Times New Roman', Times, serif;
-  letter-spacing: .75vw;
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
