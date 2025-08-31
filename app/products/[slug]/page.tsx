@@ -203,27 +203,27 @@ export default function Page({ params }: { params: { slug: string } }) {
       <div className={styles.tabs}>
         <div className={styles.tabList}>
           <div 
-            className={clsx(styles.tabItem, activeTab === 'description' && styles.active)}
-            onClick={() => setActiveTab('description')}
+            className={clsx(styles.tabItem, activeTab === "description" && styles.active)}
+            onClick={() => setActiveTab("description")}
           >
             Description
           </div>
           <div 
-            className={clsx(styles.tabItem, activeTab === 'details' && styles.active)}
-            onClick={() => setActiveTab('details')}
+            className={clsx(styles.tabItem, activeTab === "details" && styles.active)}
+            onClick={() => setActiveTab("details")}
           >
             Details
           </div>
           <div 
-            className={clsx(styles.tabItem, activeTab === 'reviews' && styles.active)}
-            onClick={() => setActiveTab('reviews')}
+            className={clsx(styles.tabItem, activeTab === "reviews" && styles.active)}
+            onClick={() => setActiveTab("reviews")}
           >
             Reviews
           </div>
         </div>
         
         <div className={styles.tabContent}>
-          {activeTab === 'description' && (
+          {activeTab === "description" && (
             <div>
               <p>AMIR BLAQ is a fashion product of creative conscious visions representing a new reign and luxury garments. 
               This {name.toLowerCase()} exemplifies our commitment to quality and innovative design.</p>
@@ -232,7 +232,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             </div>
           )}
           
-          {activeTab === 'details' && (
+          {activeTab === "details" && (
             <div>
               <ul className="list-disc pl-5 space-y-2">
                 <li>Premium quality materials</li>
@@ -244,7 +244,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             </div>
           )}
           
-          {activeTab === 'reviews' && (
+          {activeTab === "reviews" && (
             <div>
               <p>Customer reviews coming soon.</p>
             </div>

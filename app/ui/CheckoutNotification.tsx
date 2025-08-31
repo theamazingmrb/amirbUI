@@ -35,7 +35,7 @@ export default function CheckoutNotification({ show, onClose }: CheckoutNotifica
           <div className="flex flex-col items-center">
             <h3 className="text-xl text-white font-semibold mb-2">Checkout Unavailable</h3>
             <p className="text-center mb-4">
-              We're currently not accepting new orders at this time. Please check back soon for updates.
+              We&apos;re currently not accepting new orders at this time. Please check back soon for updates.
             </p>
             <button
               onClick={() => {
