@@ -127,7 +127,7 @@ const Carousel: FC<CarouselProps> = ({
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`${styles.indicator} ${index === currentIndex ? styles.activeIndicator : ''}`}
+              className={`${styles.indicator} ${index === currentIndex ? styles.activeIndicator : ""}`}
               aria-label={`Go to slide ${index + 1}`}
             >
               <FontAwesomeIcon icon={faCircle} size="xs" />

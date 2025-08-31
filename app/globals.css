@@ -3,32 +3,74 @@
 @tailwind utilities;
 
 :root {
+  /* Spacing system (in rem for accessibility) */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+  
   /* Base colors */
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
   
   /* Brand colors */
-  --color-primary: #000000;
-  --color-secondary: #ffffff;
+  --color-primary: #ffffff;
+  --color-secondary: #000000;
   --color-accent: #d4af37;
   
   /* Text colors */
-  --color-text-primary: #333333;
-  --color-text-secondary: #666666;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #cccccc;
   --color-text-tertiary: #999999;
   
   /* Background colors */
-  --color-background: #ffffff;
-  --color-background-alt: #f9f9f9;
+  --color-background: #000000;
+  --color-background-alt: #111111;
   
   /* Border colors */
-  --color-border: #e5e5e5;
+  --color-border: #333333;
   
   /* Status colors */
   --color-error: #e53935;
   --color-success: #43a047;
   --color-warning: #f9a825;
   --color-info: #1e88e5;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(255, 255, 255, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(255, 255, 255, 0.1), 0 10px 10px -5px rgba(255, 255, 255, 0.04);
+  
+  /* Border radius */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-fast: 150ms;
+  --transition-normal: 300ms;
+  --transition-slow: 500ms;
+  
+  /* Z-index layers */
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-auto: auto;
 }
 
 /* Base styles */
@@ -48,6 +90,55 @@ body {
 .timeNewRoman {
   font-family: 'Times New Roman', Times, serif;
   letter-spacing: 0.75vw;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast) ease;
+}
+
+.btn-primary {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-secondary {
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+  border-color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.btn-accent {
+  color: var(--color-primary);
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.btn-accent:hover {
+  background-color: rgba(212, 175, 55, 0.9);
 }
 
 /* Headings */

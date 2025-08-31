@@ -16,23 +16,23 @@
   --space-24: 6rem;    /* 96px */
   
   /* Color system */
-  --color-primary: #000000;
-  --color-secondary: #ffffff;
+  --color-primary: #ffffff;
+  --color-secondary: #000000;
   --color-accent: #d4af37;
-  --color-text-primary: #333333;
-  --color-text-secondary: #666666;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #cccccc;
   --color-text-tertiary: #999999;
-  --color-background: #ffffff;
-  --color-background-alt: #f9f9f9;
-  --color-border: #e5e5e5;
+  --color-background: #000000;
+  --color-background-alt: #111111;
+  --color-border: #333333;
   --color-error: #e53935;
   --color-success: #43a047;
   
   /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 2px 0 rgba(255, 255, 255, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(255, 255, 255, 0.1), 0 10px 10px -5px rgba(255, 255, 255, 0.04);
   
   /* Border radius */
   --radius-sm: 0.125rem;
@@ -152,7 +152,7 @@ a:hover {
 }
 
 .btn-primary:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .btn-secondary {
@@ -162,7 +162,7 @@ a:hover {
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .btn-accent {

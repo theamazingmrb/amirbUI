@@ -15,7 +15,7 @@ export default function Home() {
       <section className='w-full flex flex-col gap-8 md:gap-12 py-8 md:py-12'>
         <div className="text-center max-w-3xl mx-auto">
           <h1 className='text-4xl sm:text-6xl font-serif tracking-wider uppercase mb-4 md:mb-6'>AMIR BLAQ</h1>
-          <p className='text-lg sm:text-xl text-gray-800 leading-relaxed'>
+          <p className='text-lg sm:text-xl text-white leading-relaxed'>
             A fashion product of creative conscious visions representing a new reign and luxury garments.
           </p>
         </div>
@@ -30,14 +30,14 @@ export default function Home() {
         </div>
       </section>
       
-      <hr className="border-t border-gray-300 w-full max-w-5xl my-8 md:my-12" />
+      <hr className="border-t border-gray-700 w-full max-w-5xl my-8 md:my-12" />
       
       {/* New Arrivals Section */}
       <section className='w-full max-w-5xl mx-auto py-8'>
         <div className='flex flex-col md:flex-row justify-between items-center gap-6 md:gap-10'>
           <div className='md:w-1/4'>
             <h2 className='text-3xl md:text-4xl font-serif tracking-wide mb-4'>New Arrivals</h2>
-            <p className='text-gray-600 hidden md:block'>Discover our latest collection of premium fashion items.</p>
+            <p className='text-gray-300 hidden md:block'>Discover our latest collection of premium fashion items.</p>
           </div>
           
           <div className='w-full md:w-3/4'>

@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import styles from './Footer.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -21,6 +23,14 @@ export default function Footer() {
                     <p className={styles.footerText}>
                         Luxury fashion representing a new reign of creative conscious visions.
                     </p>
+                </div>
+                <div className={styles.footerSection} style={{ alignItems: 'flex-end' }}>
+                    <h3 className={styles.footerHeading}>Connect With Us</h3>
+                    <div className={styles.socialLinks}>
+                        <a href="https://www.facebook.com/profile.php?id=100069742852544#" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+                            <FontAwesomeIcon icon={faFacebook} size="lg" />
+                        </a>
+                    </div>
                 </div>
             </div>
             

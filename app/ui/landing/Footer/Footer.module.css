@@ -8,15 +8,17 @@
 
 .footerContent {
   display: flex;
-  justify-content: center;
-  max-width: 800px;
+  justify-content: space-between;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  gap: 2rem;
 }
 
 .footerSection {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .footerHeading {
@@ -37,23 +39,24 @@
 
 .socialLinks {
   display: flex;
-  gap: 1rem;
-  margin-top: 0.5rem;
+  gap: 1.5rem;
+  margin-top: 0.75rem;
+  align-items: center;
 }
 
-.socialIcon {
+.socialLink {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
   color: #ffffff;
   transition: all 0.2s ease;
 }
 
-.socialIcon:hover {
+.socialLink:hover {
   background-color: #ffffff;
   color: #000000;
   transform: translateY(-3px);
@@ -142,7 +145,7 @@
 }
 
 .footerBottom {
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   padding: 1.5rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -165,7 +168,7 @@
 
 .legalLinks {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .legalLinks a {
