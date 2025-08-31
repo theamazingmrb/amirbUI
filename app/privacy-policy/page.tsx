@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
         <section className={styles.section}>
           <h2>Introduction</h2>
           <p>
-            AMIR BLAQ ("we," "our," or "us") respects your privacy and is committed to protecting your personal data. 
+            AMIR BLAQ (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) respects your privacy and is committed to protecting your personal data. 
             This privacy policy explains how we collect, use, and safeguard your information when you visit our website 
             or make a purchase.
           </p>
@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
             <li>Process and fulfill your orders</li>
             <li>Communicate with you about your orders</li>
             <li>Improve our website and services</li>
-            <li>Send you marketing communications (if you've opted in)</li>
+            <li>Send you marketing communications (if you&apos;ve opted in)</li>
             <li>Comply with legal obligations</li>
           </ul>
         </section>
